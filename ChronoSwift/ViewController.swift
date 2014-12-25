@@ -27,7 +27,25 @@ class ViewController: UIViewController {
         tapStatus.text = "\(tapCount) taps"
     }
     
-  
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        let touchCount = touches.count
+        let touch = touches.anyObject() as UITouch
+        let tapCount = touch.tapCount
+        
+        methodStatus.text = "touchesMoved"
+        touchStatus.text = "\(touchCount) touches"
+        tapStatus.text = "\(tapCount) taps"
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        let touchCount = touches.count
+        let touch = touches.anyObject() as UITouch
+        let tapCount = touch.tapCount
+        
+        methodStatus.text = "touchesEnded"
+        touchStatus.text = "\(touchCount) touches"
+        tapStatus.text = "\(tapCount) taps"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
